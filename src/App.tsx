@@ -1,24 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./style.css"
+
+import { useState } from "react";
+
+import {
+  MockExample,
+  clientExample,
+  productExample1,
+  productExample2
+} from "./utils/example"
+
+import { Tree } from "./components/Tree"
 
 function App() {
+  const [client, setClient] = useState<MockExample>();
+  const [product, setProduct] = useState<MockExample>();
+  const [other, setOther] = useState<MockExample>();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Tree
+        data={clientExample}
+        setData={setClient}
+      />
+
+      {
+        client &&
+        <Tree
+          data={productExample1}
+          setData={setProduct}
+        />
+      }
+
+      {
+        product &&
+        <Tree
+          data={productExample2}
+          setData={setOther}
+        />
+      }
+
     </div>
   );
 }

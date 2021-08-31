@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+}
+
+body {
+    background: #000000;
+}
+
+.tree-container {
+    display: flex;
+}
+
+.tree-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tree-item > span {
+    font-size: 1.5rem;
+}
